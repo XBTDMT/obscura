@@ -1,0 +1,35 @@
+{
+  "detector" : "personal.ssn.us",
+  "expected" : [
+    {
+      "detectors" : [
+        "personal.ssn.us"
+      ],
+      "line" : 2,
+      "range" : [
+        7,
+        11
+      ],
+      "rect" : [
+        154,
+        117,
+        173,
+        20
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 251,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "SSN_US=123-45-6789",
+    "LOG_LEVEL=debug",
+    "PORT=8080"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 579
+}

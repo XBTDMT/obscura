@@ -1,0 +1,36 @@
+{
+  "detector" : "messaging.mailchimp.apikey",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.env.secret",
+        "messaging.mailchimp.apikey"
+      ],
+      "line" : 2,
+      "range" : [
+        18,
+        37
+      ],
+      "rect" : [
+        331,
+        117,
+        592,
+        20
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 251,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "MAILCHIMP_API_KEY=e4f92508f541694322f0e1a017a5a395-us21",
+    "LOG_LEVEL=debug",
+    "PORT=8080"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 964
+}

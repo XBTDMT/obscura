@@ -1,0 +1,36 @@
+{
+  "detector" : "scm.npm.token",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.env.secret",
+        "scm.npm.token"
+      ],
+      "line" : 2,
+      "range" : [
+        10,
+        40
+      ],
+      "rect" : [
+        203,
+        115,
+        639,
+        26
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 251,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "NPM_TOKEN=npm_45jo66fZbJl96neLUjKEMMdyQbfmUDvNQ6xZ",
+    "LOG_LEVEL=debug",
+    "PORT=8080"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 884
+}

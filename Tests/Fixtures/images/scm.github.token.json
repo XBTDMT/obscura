@@ -1,0 +1,36 @@
+{
+  "detector" : "scm.github.token",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.yaml.secret",
+        "scm.github.token"
+      ],
+      "line" : 2,
+      "range" : [
+        19,
+        40
+      ],
+      "rect" : [
+        323,
+        109,
+        591,
+        24
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "json-dark",
+  "height" : 237,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"github_token\": \"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\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 12,
+  "scale" : 2,
+  "width" : 985
+}

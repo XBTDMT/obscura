@@ -1,0 +1,35 @@
+{
+  "detector" : "scm.gitlab.token",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.env.secret",
+        "scm.gitlab.token"
+      ],
+      "line" : 1,
+      "range" : [
+        53,
+        26
+      ],
+      "rect" : [
+        871,
+        76,
+        404,
+        26
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "terminal-dark",
+  "height" : 212,
+  "lines" : [
+    "Last login: Mon Oct 27 09:12:44 on ttys002",
+    "dev@workstation ~/projects/api % export GITLAB_TOKEN=glpat-1aW1dQXdprq_jHJ1kSm8",
+    "dev@workstation ~/projects/api % npm run dev",
+    "> node server.js"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 1317
+}

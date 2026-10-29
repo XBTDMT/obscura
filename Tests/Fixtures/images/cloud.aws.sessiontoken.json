@@ -1,0 +1,34 @@
+{
+  "detector" : "cloud.aws.sessiontoken",
+  "expected" : [
+    {
+      "detectors" : [
+        "cloud.aws.sessiontoken",
+        "config.env.secret"
+      ],
+      "line" : 1,
+      "range" : [
+        20,
+        302
+      ],
+      "rect" : [
+        338,
+        73,
+        4478,
+        24
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "log-light",
+  "height" : 165,
+  "lines" : [
+    "2026-10-27 09:14:03 INFO  loaded settings:",
+    "aws_session_token = Dys/ge3yvy1Ix8/BUIjeftvArmtHz3lEk7Y7DbbM/A4Hcg0CuBwuBkADh+03kRN55uIdKFa6CSVzFTKCErsWGAoprPDNJB9+Kj9Myv5VMk+F21fIJhOACi7YmrVi8S49VJjk4qtJMzEuupkyBrArS+wSwmMNsUzzKgcurlNfMF/7whP8wmiXw7O5szGoZWkRpmQVqavDZI2eQXkylgdLdVw1LL8a8dT6ZctTPCYjTnlUhfMTPb6Lmsv/MaH4+MUvor3rXssJunZbC2/7jvkTtCiJy/UpjGcqsQeVZXvMzXmQ==",
+    "2026-10-27 09:14:04 INFO  worker ready"
+  ],
+  "pointSize" : 12,
+  "scale" : 2,
+  "width" : 4858
+}

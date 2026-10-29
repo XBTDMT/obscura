@@ -1,0 +1,33 @@
+{
+  "detector" : "personal.dob.labelled",
+  "expected" : [
+    {
+      "detectors" : [
+        "personal.dob.labelled"
+      ],
+      "line" : 1,
+      "range" : [
+        5,
+        10
+      ],
+      "rect" : [
+        116,
+        73,
+        145,
+        21
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "log-light",
+  "height" : 165,
+  "lines" : [
+    "2026-10-27 09:14:03 INFO  loaded settings:",
+    "DOB: 01/02/1990",
+    "2026-10-27 09:14:04 INFO  worker ready"
+  ],
+  "pointSize" : 12,
+  "scale" : 2,
+  "width" : 704
+}

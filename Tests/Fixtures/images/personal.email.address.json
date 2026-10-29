@@ -1,0 +1,35 @@
+{
+  "detector" : "personal.email.address",
+  "expected" : [
+    {
+      "detectors" : [
+        "personal.email.address"
+      ],
+      "line" : 2,
+      "range" : [
+        20,
+        17
+      ],
+      "rect" : [
+        379,
+        120,
+        283,
+        28
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "json-light",
+  "height" : 265,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"email_address\": \"alice@example.com\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 738
+}

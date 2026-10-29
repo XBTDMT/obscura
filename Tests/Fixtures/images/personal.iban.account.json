@@ -1,0 +1,33 @@
+{
+  "detector" : "personal.iban.account",
+  "expected" : [
+    {
+      "detectors" : [
+        "personal.iban.account"
+      ],
+      "line" : 1,
+      "range" : [
+        0,
+        27
+      ],
+      "rect" : [
+        42,
+        77,
+        419,
+        20
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "terminal-dark",
+  "height" : 173,
+  "lines" : [
+    "dev@workstation ~/projects/api % cat config/local.conf",
+    "DE89 3704 0044 0532 0130 00",
+    "dev@workstation ~/projects/api %"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 926
+}

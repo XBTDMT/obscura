@@ -1,0 +1,35 @@
+{
+  "detector" : "messaging.slack.webhook",
+  "expected" : [
+    {
+      "detectors" : [
+        "messaging.slack.webhook"
+      ],
+      "line" : 2,
+      "range" : [
+        24,
+        81
+      ],
+      "rect" : [
+        447,
+        120,
+        1362,
+        28
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "json-light",
+  "height" : 265,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"slack_webhook_url\": \"https://hooks.slack.com/services/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\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 1884
+}

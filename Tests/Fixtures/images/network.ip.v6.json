@@ -1,0 +1,35 @@
+{
+  "detector" : "network.ip.v6",
+  "expected" : [
+    {
+      "detectors" : [
+        "network.ip.v6"
+      ],
+      "line" : 2,
+      "range" : [
+        6,
+        31
+      ],
+      "rect" : [
+        138,
+        117,
+        496,
+        20
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 251,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "IP_V6=2001:db8:85a3:0:0:8a2e:370:7334",
+    "LOG_LEVEL=debug",
+    "PORT=8080"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 675
+}

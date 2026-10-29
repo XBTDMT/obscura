@@ -1,0 +1,35 @@
+{
+  "detector" : "ai.cohere.apikey",
+  "expected" : [
+    {
+      "detectors" : [
+        "ai.cohere.apikey",
+        "config.env.secret"
+      ],
+      "line" : 2,
+      "range" : [
+        15,
+        40
+      ],
+      "rect" : [
+        283,
+        115,
+        640,
+        26
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 212,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "COHERE_API_KEY=vBpo6d1EWFe48ZAkdTJmqplUGYjjo1Epfy7JUaOY",
+    "LOG_LEVEL=debug"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 964
+}

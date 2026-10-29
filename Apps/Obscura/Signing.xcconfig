@@ -1,0 +1,10 @@
+// Code signing for the Obscura app target.
+// Default: ad-hoc ("-"), so a clone builds with no certificate (G-4: no developer account).
+// A Mac with the "Obscura Self-Signed" certificate in its keychain creates Signing.local.xcconfig beside this file
+// (git-ignored) containing:   CODE_SIGN_IDENTITY = Obscura Self-Signed
+// One stable identity keeps the app's designated requirement fixed, so macOS keeps folder access across builds, and an
+// update is accepted only when it meets that same requirement (G-33). An ad-hoc copy can't verify updates at all.
+CODE_SIGN_IDENTITY = -
+#include "Update.xcconfig"
+#include "Identity.xcconfig"
+#include? "Signing.local.xcconfig"

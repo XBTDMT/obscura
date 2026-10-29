@@ -1,0 +1,35 @@
+{
+  "detector" : "cloud.aws.accesskeyid",
+  "expected" : [
+    {
+      "detectors" : [
+        "cloud.aws.accesskeyid",
+        "config.env.secret"
+      ],
+      "line" : 1,
+      "range" : [
+        58,
+        20
+      ],
+      "rect" : [
+        948,
+        77,
+        311,
+        20
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "terminal-dark",
+  "height" : 212,
+  "lines" : [
+    "Last login: Mon Oct 27 09:12:44 on ttys002",
+    "dev@workstation ~/projects/api % export AWS_ACCESS_KEY_ID=AKIABOW3UJG66TEOFP2G",
+    "dev@workstation ~/projects/api % npm run dev",
+    "> node server.js"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 1301
+}

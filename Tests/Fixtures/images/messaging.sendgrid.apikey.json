@@ -1,0 +1,36 @@
+{
+  "detector" : "messaging.sendgrid.apikey",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.yaml.secret",
+        "messaging.sendgrid.apikey"
+      ],
+      "line" : 2,
+      "range" : [
+        23,
+        69
+      ],
+      "rect" : [
+        429,
+        121,
+        1160,
+        27
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "json-light",
+  "height" : 265,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"sendgrid_api_key\": \"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\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 1665
+}

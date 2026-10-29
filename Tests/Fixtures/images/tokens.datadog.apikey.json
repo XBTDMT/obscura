@@ -1,0 +1,34 @@
+{
+  "detector" : "tokens.datadog.apikey",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.env.secret",
+        "tokens.datadog.apikey"
+      ],
+      "line" : 1,
+      "range" : [
+        11,
+        32
+      ],
+      "rect" : [
+        214,
+        76,
+        497,
+        21
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "terminal-dark",
+  "height" : 173,
+  "lines" : [
+    "dev@workstation ~/projects/api % cat config/local.conf",
+    "DD_API_KEY=a8e87bf732d59ceaadd9e9e3bf93074a",
+    "dev@workstation ~/projects/api %"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 926
+}

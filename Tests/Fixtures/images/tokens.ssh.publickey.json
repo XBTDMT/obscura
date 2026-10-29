@@ -1,0 +1,33 @@
+{
+  "detector" : "tokens.ssh.publickey",
+  "expected" : [
+    {
+      "detectors" : [
+        "tokens.ssh.publickey"
+      ],
+      "line" : 1,
+      "range" : [
+        0,
+        80
+      ],
+      "rect" : [
+        43,
+        78,
+        1344,
+        23
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "editor-dark",
+  "height" : 181,
+  "lines" : [
+    "// settings.local, never commit",
+    "ssh-ed25519 AAAAD21wDtzFoCOVIOYBLEOCkmPYzvxPSbNToowXG7VEObnbNsd9hIlf8d8oMa0XHZeM user@host",
+    "// end of local settings"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 1598
+}

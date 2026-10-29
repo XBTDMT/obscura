@@ -1,0 +1,35 @@
+{
+  "detector" : "personal.passport.mrz",
+  "expected" : [
+    {
+      "detectors" : [
+        "personal.passport.mrz"
+      ],
+      "line" : 2,
+      "range" : [
+        13,
+        44
+      ],
+      "rect" : [
+        251,
+        117,
+        703,
+        20
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 251,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "PASSPORT_MRZ=P<UTOERIKSSON<<ANNA<MARIA<<<<<<<<<<<<<<<<<<<",
+    "LOG_LEVEL=debug",
+    "PORT=8080"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 997
+}

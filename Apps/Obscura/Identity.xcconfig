@@ -1,0 +1,8 @@
+// Obscura's earlier identity (G-38), included by Signing.xcconfig.
+// A build that names the bundle identifier an earlier build of the same copy ran under carries that identity's settings,
+// Keychain items, Spotlight entries and login item over at its first launch (IdentityMigration). Every public build
+// leaves it empty: nothing is carried and nothing about an earlier identity is in the app. A Mac that ran an earlier
+// private build sets it once, in the git-ignored Signing.local.xcconfig (read after this file):
+//   OBSCURA_PREVIOUS_IDENTITY = <the earlier bundle identifier>
+// and removes it again once that build has run. Scripts/check-app-signature.sh --release refuses a build that names one.
+OBSCURA_PREVIOUS_IDENTITY =

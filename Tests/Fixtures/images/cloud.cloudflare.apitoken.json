@@ -1,0 +1,34 @@
+{
+  "detector" : "cloud.cloudflare.apitoken",
+  "expected" : [
+    {
+      "detectors" : [
+        "cloud.cloudflare.apitoken",
+        "config.env.secret"
+      ],
+      "line" : 1,
+      "range" : [
+        21,
+        40
+      ],
+      "rect" : [
+        396,
+        79,
+        672,
+        27
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "editor-dark",
+  "height" : 181,
+  "lines" : [
+    "// settings.local, never commit",
+    "CLOUDFLARE_API_TOKEN=DEOn5tRux4TmAzzg69YGKqszZsRF_hgEeUGPA8NR",
+    "// end of local settings"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 1109
+}

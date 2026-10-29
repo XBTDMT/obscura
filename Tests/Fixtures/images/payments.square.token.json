@@ -1,0 +1,36 @@
+{
+  "detector" : "payments.square.token",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.env.secret",
+        "payments.square.token"
+      ],
+      "line" : 2,
+      "range" : [
+        13,
+        64
+      ],
+      "rect" : [
+        251,
+        115,
+        1024,
+        26
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 251,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "SQUARE_TOKEN=EAAA3GcUIMPAtvx03kigG8imEZCAy54Igbrn2-a41zM2AoIZONvWrwp9K-5Y-Jt7",
+    "LOG_LEVEL=debug",
+    "PORT=8080"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 1318
+}

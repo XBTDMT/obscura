@@ -1,0 +1,55 @@
+{
+  "fill": {
+    "linear-gradient": [
+      "srgb:0.17255,0.16471,0.35294,1.00000",
+      "srgb:0.05098,0.04706,0.12157,1.00000"
+    ]
+  },
+  "groups": [
+    {
+      "name": "pixels",
+      "layers": [
+        {
+          "name": "pixels",
+          "image-name": "pixels.png",
+          "glass": false,
+          "blend-mode": "normal",
+          "opacity": 1
+        }
+      ],
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0
+      },
+      "translucency": {
+        "enabled": false,
+        "value": 0
+      }
+    },
+    {
+      "name": "ring",
+      "layers": [
+        {
+          "name": "ring",
+          "image-name": "ring.svg",
+          "glass": true,
+          "blend-mode": "normal",
+          "opacity": 1
+        }
+      ],
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.5
+      },
+      "translucency": {
+        "enabled": true,
+        "value": 0.2
+      }
+    }
+  ],
+  "supported-platforms": {
+    "squares": [
+      "macOS"
+    ]
+  }
+}

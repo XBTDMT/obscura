@@ -1,0 +1,36 @@
+{
+  "detector" : "ai.openai.apikey",
+  "expected" : [
+    {
+      "detectors" : [
+        "ai.openai.apikey",
+        "config.env.secret"
+      ],
+      "line" : 2,
+      "range" : [
+        15,
+        56
+      ],
+      "rect" : [
+        284,
+        115,
+        895,
+        26
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 251,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "OPENAI_API_KEY=sk-proj-b9hcwF5IUV9ErCex09Xt1WM1TTvjQhwTKWtVtsZ8hadM5hXb",
+    "LOG_LEVEL=debug",
+    "PORT=8080"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 1222
+}

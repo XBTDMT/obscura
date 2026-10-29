@@ -1,0 +1,34 @@
+{
+  "detector" : "tokens.auth.header",
+  "expected" : [
+    {
+      "detectors" : [
+        "tokens.auth.header"
+      ],
+      "line" : 2,
+      "range" : [
+        22,
+        40
+      ],
+      "rect" : [
+        396,
+        117,
+        640,
+        24
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 212,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "Authorization: Bearer KYDNY8mpDdcBWHUTcGzPWBCOGek9tCIHDE71dQqW",
+    "LOG_LEVEL=debug"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 1077
+}

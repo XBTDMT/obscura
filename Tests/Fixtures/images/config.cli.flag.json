@@ -1,0 +1,36 @@
+{
+  "detector" : "config.cli.flag",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.cli.flag",
+        "config.env.secret",
+        "config.labelled.password"
+      ],
+      "line" : 2,
+      "range" : [
+        25,
+        12
+      ],
+      "rect" : [
+        444,
+        115,
+        188,
+        26
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 212,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "mysql -u root --password=a5ihgkBdA43J",
+    "LOG_LEVEL=debug"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 675
+}

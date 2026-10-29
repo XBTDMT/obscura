@@ -1,0 +1,36 @@
+{
+  "detector" : "cloud.vercel.token",
+  "expected" : [
+    {
+      "detectors" : [
+        "cloud.vercel.token",
+        "config.yaml.secret"
+      ],
+      "line" : 2,
+      "range" : [
+        19,
+        31
+      ],
+      "rect" : [
+        361,
+        120,
+        522,
+        28
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "json-light",
+  "height" : 265,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"vercel_token\": \"vercel_nwmN6jhoW2laIOnuSbeP1acw\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 957
+}

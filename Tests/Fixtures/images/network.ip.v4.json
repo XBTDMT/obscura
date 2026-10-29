@@ -1,0 +1,35 @@
+{
+  "detector" : "network.ip.v4",
+  "expected" : [
+    {
+      "detectors" : [
+        "network.ip.v4"
+      ],
+      "line" : 2,
+      "range" : [
+        12,
+        12
+      ],
+      "rect" : [
+        220,
+        111,
+        174,
+        18
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "json-dark",
+  "height" : 237,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"ip_v4\": \"192.168.1.10\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 12,
+  "scale" : 2,
+  "width" : 481
+}

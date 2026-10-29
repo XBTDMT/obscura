@@ -1,0 +1,35 @@
+{
+  "detector" : "tokens.sentry.dsn",
+  "expected" : [
+    {
+      "detectors" : [
+        "tokens.sentry.dsn"
+      ],
+      "line" : 2,
+      "range" : [
+        25,
+        32
+      ],
+      "rect" : [
+        412,
+        110,
+        472,
+        19
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "json-dark",
+  "height" : 237,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"sentry_dsn\": \"https://3a35eb5e1e87e9fdd490b43d971dade5@o123456.ingest.us.sentry.io/4506\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 12,
+  "scale" : 2,
+  "width" : 1445
+}

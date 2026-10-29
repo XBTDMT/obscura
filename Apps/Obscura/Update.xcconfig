@@ -1,0 +1,11 @@
+// Obscura's update trust (G-33), included by Signing.xcconfig. Both values ship as placeholders: a build holding either
+// one has no updater (Check for Updates… says updates aren't set up), and Scripts/check-app-signature.sh --release
+// refuses it. The release Mac sets the real values in the git-ignored Signing.local.xcconfig (which is read after this
+// file), or on the xcodebuild command line:
+//   OBSCURA_UPDATE_PUBLIC_KEY = <base64 of the raw 32-byte Ed25519 public key; `obscura release public-key` prints it>
+//   OBSCURA_UPDATE_FEED_URL = https:/$()/<owner>.github.io/obscura/obscura-update.json
+// The public key is COMPILED INTO the executable (the *.updatekey build rule in project.yml writes it into a Swift
+// source), so changing it means changing signed code pages, not a resource file. The feed address is the Info.plist key
+// ObscuraUpdateFeedURL. Neither is secret; the private key never leaves the release Mac's Keychain (and its backup).
+OBSCURA_UPDATE_PUBLIC_KEY = REPLACE_WITH_OBSCURA_UPDATE_PUBLIC_KEY
+OBSCURA_UPDATE_FEED_URL = https:/$()/REPLACE_WITH_OWNER.github.io/obscura/obscura-update.json

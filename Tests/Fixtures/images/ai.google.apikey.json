@@ -1,0 +1,36 @@
+{
+  "detector" : "ai.google.apikey",
+  "expected" : [
+    {
+      "detectors" : [
+        "ai.google.apikey",
+        "config.yaml.secret"
+      ],
+      "line" : 2,
+      "range" : [
+        21,
+        39
+      ],
+      "rect" : [
+        352,
+        109,
+        577,
+        23
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "json-dark",
+  "height" : 237,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"google_api_key\": \"AIzaHJdeunLo_N1UKps0ULxrzBFFrjS6l75PKo1\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 12,
+  "scale" : 2,
+  "width" : 1000
+}

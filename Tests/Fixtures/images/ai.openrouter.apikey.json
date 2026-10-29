@@ -1,0 +1,36 @@
+{
+  "detector" : "ai.openrouter.apikey",
+  "expected" : [
+    {
+      "detectors" : [
+        "ai.openrouter.apikey",
+        "config.yaml.secret"
+      ],
+      "line" : 2,
+      "range" : [
+        25,
+        73
+      ],
+      "rect" : [
+        464,
+        121,
+        1226,
+        22
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "json-light",
+  "height" : 265,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"openrouter_api_key\": \"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\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 1766
+}

@@ -1,0 +1,36 @@
+{
+  "detector" : "scm.notion.token",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.yaml.secret",
+        "scm.notion.token"
+      ],
+      "line" : 2,
+      "range" : [
+        19,
+        50
+      ],
+      "rect" : [
+        324,
+        109,
+        738,
+        24
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "json-dark",
+  "height" : 237,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"notion_token\": \"secret_vMFodATiIdoI939hNiy3j94HibiRcKd8WGVJyBD3I88\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 12,
+  "scale" : 2,
+  "width" : 1134
+}

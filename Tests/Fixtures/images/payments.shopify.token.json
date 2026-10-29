@@ -1,0 +1,36 @@
+{
+  "detector" : "payments.shopify.token",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.yaml.secret",
+        "payments.shopify.token"
+      ],
+      "line" : 2,
+      "range" : [
+        20,
+        38
+      ],
+      "rect" : [
+        380,
+        121,
+        635,
+        27
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "json-light",
+  "height" : 265,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"shopify_token\": \"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\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 1092
+}

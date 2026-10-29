@@ -1,0 +1,35 @@
+{
+  "detector" : "ai.deepseek.apikey",
+  "expected" : [
+    {
+      "detectors" : [
+        "ai.deepseek.apikey",
+        "ai.openai.apikey",
+        "config.env.secret"
+      ],
+      "line" : 1,
+      "range" : [
+        17,
+        35
+      ],
+      "rect" : [
+        329,
+        79,
+        586,
+        22
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "editor-dark",
+  "height" : 181,
+  "lines" : [
+    "// settings.local, never commit",
+    "DEEPSEEK_API_KEY=sk-c618465dab01896623e0a7763c013e2b",
+    "// end of local settings"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 957
+}

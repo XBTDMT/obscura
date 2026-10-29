@@ -1,0 +1,35 @@
+{
+  "detector" : "network.hostname.internal",
+  "expected" : [
+    {
+      "detectors" : [
+        "network.hostname.internal"
+      ],
+      "line" : 2,
+      "range" : [
+        24,
+        14
+      ],
+      "rect" : [
+        446,
+        120,
+        233,
+        23
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "json-light",
+  "height" : 265,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"hostname_internal\": \"db-01.internal\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 755
+}

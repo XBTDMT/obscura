@@ -1,0 +1,14 @@
+Tests/Fixtures/text/
+Tests/ObscuraDetectTests/
+Sources/ObscuraDetect/Catalog/BuiltInCatalogue.swift
+Tests/ObscuraEngineTests/
+Sources/ObscuraUIKit/SampleData.swift
+Tests/ObscuraMenuBarUITests/
+Tests/ObscuraViewerUITests/
+Tests/ObscuraSettingsUITests/
+Tests/ObscuraNotifyUITests/
+Tests/ObscuraJournalUITests/
+Tests/ObscuraSetupUITests/
+Tests/Fixtures/images/
+Tests/ObscuraThumbnailUITests/
+Tests/ObscuraUIKitTests/SampleTerminalCoverTests.swift

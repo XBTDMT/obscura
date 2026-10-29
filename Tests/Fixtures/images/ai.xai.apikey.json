@@ -1,0 +1,36 @@
+{
+  "detector" : "ai.xai.apikey",
+  "expected" : [
+    {
+      "detectors" : [
+        "ai.xai.apikey",
+        "config.yaml.secret"
+      ],
+      "line" : 2,
+      "range" : [
+        18,
+        84
+      ],
+      "rect" : [
+        309,
+        109,
+        1242,
+        24
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "json-dark",
+  "height" : 237,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"xai_api_key\": \"xai-cqUmEkUaLbwqMJxlPvbe4RuF4N1PGeJII4LpRpAfXLpCC3Pm2FMbu0rVo1SvEuxyWPgq3FCqwbyQCJhg\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 12,
+  "scale" : 2,
+  "width" : 1623
+}

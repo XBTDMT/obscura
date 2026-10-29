@@ -1,0 +1,35 @@
+{
+  "detector" : "cloud.heroku.apikey",
+  "expected" : [
+    {
+      "detectors" : [
+        "cloud.heroku.apikey",
+        "config.env.secret"
+      ],
+      "line" : 2,
+      "range" : [
+        15,
+        36
+      ],
+      "rect" : [
+        283,
+        117,
+        575,
+        20
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 212,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "HEROKU_API_KEY=fe476389-de53-b8ce-4432-d2bc4a66a397",
+    "LOG_LEVEL=debug"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 900
+}

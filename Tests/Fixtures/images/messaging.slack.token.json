@@ -1,0 +1,36 @@
+{
+  "detector" : "messaging.slack.token",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.env.secret",
+        "messaging.slack.token"
+      ],
+      "line" : 2,
+      "range" : [
+        12,
+        55
+      ],
+      "rect" : [
+        235,
+        115,
+        880,
+        26
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 251,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "SLACK_TOKEN=xoxb-476768909588-929111859648-BQhDgcGwPoZi8ctB2YxvcEj9",
+    "LOG_LEVEL=debug",
+    "PORT=8080"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 1157
+}

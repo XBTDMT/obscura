@@ -1,0 +1,34 @@
+{
+  "detector" : "cloud.azure.storagekey",
+  "expected" : [
+    {
+      "detectors" : [
+        "cloud.azure.storagekey"
+      ],
+      "line" : 2,
+      "range" : [
+        59,
+        88
+      ],
+      "rect" : [
+        990,
+        115,
+        1411,
+        26
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 212,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "DefaultEndpointsProtocol=https;AccountName=acct;AccountKey=JSE013NjYYkMUSvMb0q1BW1hm4BsC0VShHSdiXoDQhQeqLemfOfM0EJbBUsWKTlSoSSo19mmypuSPSwaiD2yfB==;EndpointSuffix=core.windows.net",
+    "LOG_LEVEL=debug"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 2957
+}

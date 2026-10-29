@@ -1,0 +1,36 @@
+{
+  "detector" : "scm.pypi.token",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.yaml.secret",
+        "scm.pypi.token"
+      ],
+      "line" : 2,
+      "range" : [
+        17,
+        90
+      ],
+      "rect" : [
+        329,
+        120,
+        1514,
+        28
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "json-light",
+  "height" : 265,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"pypi_token\": \"pypi-AgEIcHlwaS5vcmcjsJGFtvYhvYkJ4KXZVHaq3_do0Eyp86bhn7vzYEqN5ox0bEiwSBqP0JuWw2eSV3DmXMrDk\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 1918
+}

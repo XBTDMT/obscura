@@ -1,0 +1,35 @@
+{
+  "detector" : "tokens.otp.uri",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.env.secret",
+        "config.labelled.secret",
+        "tokens.otp.uri"
+      ],
+      "line" : 1,
+      "range" : [
+        48,
+        47
+      ],
+      "rect" : [
+        753,
+        73,
+        695,
+        23
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "log-light",
+  "height" : 165,
+  "lines" : [
+    "2026-10-27 09:14:03 INFO  loaded settings:",
+    "otpauth://totp/Example:alice@example.com?secret=M6HQNG3O5V22LAHQJ4ECS4B6NQGR6D6T&issuer=Example",
+    "2026-10-27 09:14:04 INFO  worker ready"
+  ],
+  "pointSize" : 12,
+  "scale" : 2,
+  "width" : 1490
+}

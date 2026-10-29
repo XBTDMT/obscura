@@ -1,0 +1,33 @@
+{
+  "detector" : "personal.phone.nanp",
+  "expected" : [
+    {
+      "detectors" : [
+        "personal.phone.nanp"
+      ],
+      "line" : 1,
+      "range" : [
+        0,
+        14
+      ],
+      "rect" : [
+        45,
+        75,
+        212,
+        23
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "terminal-dark",
+  "height" : 173,
+  "lines" : [
+    "dev@workstation ~/projects/api % cat config/local.conf",
+    "(212) 555-0199",
+    "dev@workstation ~/projects/api %"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 926
+}

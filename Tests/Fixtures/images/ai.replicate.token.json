@@ -1,0 +1,36 @@
+{
+  "detector" : "ai.replicate.token",
+  "expected" : [
+    {
+      "detectors" : [
+        "ai.replicate.token",
+        "config.yaml.secret"
+      ],
+      "line" : 2,
+      "range" : [
+        22,
+        40
+      ],
+      "rect" : [
+        415,
+        121,
+        668,
+        27
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "json-light",
+  "height" : 265,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"replicate_token\": \"r8_X6YRoJ9sLaZJ5j6axAu23rsUcNyz3RwTCW7RQ\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 1159
+}

@@ -1,0 +1,34 @@
+{
+  "detector" : "ai.mistral.apikey",
+  "expected" : [
+    {
+      "detectors" : [
+        "ai.mistral.apikey",
+        "config.env.secret"
+      ],
+      "line" : 1,
+      "range" : [
+        16,
+        32
+      ],
+      "rect" : [
+        292,
+        76,
+        497,
+        21
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "terminal-dark",
+  "height" : 173,
+  "lines" : [
+    "dev@workstation ~/projects/api % cat config/local.conf",
+    "MISTRAL_API_KEY=CdvGM5XYs4aR7H3AdDoOPkC5u8iJtauC",
+    "dev@workstation ~/projects/api %"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 926
+}

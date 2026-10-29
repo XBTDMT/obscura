@@ -1,0 +1,33 @@
+{
+  "detector" : "network.apple.serial",
+  "expected" : [
+    {
+      "detectors" : [
+        "network.apple.serial"
+      ],
+      "line" : 1,
+      "range" : [
+        15,
+        12
+      ],
+      "rect" : [
+        294,
+        79,
+        199,
+        22
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "editor-dark",
+  "height" : 181,
+  "lines" : [
+    "// settings.local, never commit",
+    "Serial Number: C02XK1ABJG5H",
+    "// end of local settings"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 603
+}

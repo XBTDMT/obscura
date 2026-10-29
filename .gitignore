@@ -1,0 +1,11 @@
+.DS_Store
+*.xcuserstate
+xcuserdata/
+.build*/
+DerivedData/
+/Packages/
+*.swp
+.build*/
+*.xcodeproj
+Apps/Obscura/Signing.local.xcconfig
+.claude/worktrees/

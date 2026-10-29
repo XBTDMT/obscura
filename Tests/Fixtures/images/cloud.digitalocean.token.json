@@ -1,0 +1,35 @@
+{
+  "detector" : "cloud.digitalocean.token",
+  "expected" : [
+    {
+      "detectors" : [
+        "cloud.digitalocean.token",
+        "config.env.secret"
+      ],
+      "line" : 1,
+      "range" : [
+        59,
+        71
+      ],
+      "rect" : [
+        965,
+        76,
+        1108,
+        26
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "terminal-dark",
+  "height" : 212,
+  "lines" : [
+    "Last login: Mon Oct 27 09:12:44 on ttys002",
+    "dev@workstation ~/projects/api % export DIGITALOCEAN_TOKEN=dop_v1_33e45c5cd67138ea9d175766c971ef12afde6d5ed282e1c390d4883af2bd22e9",
+    "dev@workstation ~/projects/api % npm run dev",
+    "> node server.js"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 2115
+}

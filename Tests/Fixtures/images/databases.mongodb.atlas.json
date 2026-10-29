@@ -1,0 +1,35 @@
+{
+  "detector" : "databases.mongodb.atlas",
+  "expected" : [
+    {
+      "detectors" : [
+        "databases.mongodb.atlas",
+        "databases.url.credentials"
+      ],
+      "line" : 2,
+      "range" : [
+        18,
+        18
+      ],
+      "rect" : [
+        330,
+        117,
+        288,
+        24
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 212,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "mongodb+srv://app:whCWpbDnComfT5gaEK@cluster0.ab1cd.mongodb.net/prod?retryWrites=true",
+    "LOG_LEVEL=debug"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 1447
+}

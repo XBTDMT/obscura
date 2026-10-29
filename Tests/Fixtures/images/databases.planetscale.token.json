@@ -1,0 +1,36 @@
+{
+  "detector" : "databases.planetscale.token",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.yaml.secret",
+        "databases.planetscale.token"
+      ],
+      "line" : 2,
+      "range" : [
+        24,
+        51
+      ],
+      "rect" : [
+        447,
+        120,
+        855,
+        28
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "json-light",
+  "height" : 265,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"planetscale_token\": \"pscale_tkn_lUXqd1wlH9QS8CUBIxdmphc8GWtVKwjpiIh8ugxv\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 14,
+  "scale" : 2,
+  "width" : 1379
+}

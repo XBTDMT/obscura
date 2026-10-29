@@ -1,0 +1,35 @@
+{
+  "detector" : "messaging.mailgun.apikey",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.env.secret",
+        "messaging.mailgun.apikey"
+      ],
+      "line" : 1,
+      "range" : [
+        56,
+        36
+      ],
+      "rect" : [
+        919,
+        76,
+        559,
+        26
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : "Menlo-Regular",
+  "frame" : "terminal-dark",
+  "height" : 212,
+  "lines" : [
+    "Last login: Mon Oct 27 09:12:44 on ttys002",
+    "dev@workstation ~/projects/api % export MAILGUN_API_KEY=key-08d2c519eaf18f09773d455d24577587",
+    "dev@workstation ~/projects/api % npm run dev",
+    "> node server.js"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 1521
+}

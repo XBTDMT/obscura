@@ -1,0 +1,24 @@
+name: Release
+# G-33: an installable Obscura release must be signed with the release identity ("Obscura Self-Signed", which lives
+# only on the release Mac) and must carry the real update public key: every installed copy accepts an update only if it
+# meets the running app's own designated requirement and comes with a feed signed by the update key, which also lives
+# only on the release Mac. A CI build is ad-hoc, so CI never publishes one (a user who installed it could never update).
+# The release Mac builds, signs, gates and makes the DMG and the signed feed (README "Releasing"); CI checks that the
+# tagged source builds and that the app it builds passes the install-mode signature gate.
+on:
+  push:
+    tags: ['v*']
+jobs:
+  build-check:
+    runs-on: macos-15
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: maxim-lobanov/setup-xcode@v1
+        with: { xcode-version: latest-stable }
+      - run: brew install xcodegen
+      - run: xcodegen generate
+      - name: Build app (Release, ad-hoc)
+        run: xcodebuild -project Obscura.xcodeproj -scheme Obscura -configuration Release -destination 'generic/platform=macOS' -derivedDataPath build -onlyUsePackageVersionsFromResolvedFile build | tail -5
+      - name: Signature gate (install mode; the release gate runs on the release Mac)
+        run: Scripts/check-app-signature.sh build/Build/Products/Release/Obscura.app

@@ -1,0 +1,36 @@
+{
+  "detector" : "payments.stripe.publishable",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.yaml.secret",
+        "payments.stripe.publishable"
+      ],
+      "line" : 2,
+      "range" : [
+        29,
+        32
+      ],
+      "rect" : [
+        472,
+        109,
+        472,
+        24
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "json-dark",
+  "height" : 237,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"stripe_publishable_key\": \"pk_live_UGhx1kyee7bEQONgXo16eNIO\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 12,
+  "scale" : 2,
+  "width" : 1015
+}

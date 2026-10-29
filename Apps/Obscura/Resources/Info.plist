@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Obscura</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>io.github.xbtdmt.obscura</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Obscura</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.developer-tools</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>15.0</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSDesktopFolderUsageDescription</key>
+	<string>Obscura checks new screenshots on your Desktop for secrets before you share them.</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>Obscura checks new screenshots in your screenshot folder for secrets before you share them.</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>Obscura checks new images in Downloads for secrets before you share them.</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2026 XBTDMT. Obscura is free software (GPL-3.0-or-later).</string>
+	<key>NSUserNotificationAlertStyle</key>
+	<string>banner</string>
+	<key>ObscuraPreviousIdentity</key>
+	<string>$(OBSCURA_PREVIOUS_IDENTITY)</string>
+	<key>ObscuraUpdateFeedURL</key>
+	<string>$(OBSCURA_UPDATE_FEED_URL)</string>
+</dict>
+</plist>

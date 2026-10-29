@@ -1,0 +1,35 @@
+{
+  "detector" : "network.mac.address",
+  "expected" : [
+    {
+      "detectors" : [
+        "network.mac.address"
+      ],
+      "line" : 2,
+      "range" : [
+        12,
+        17
+      ],
+      "rect" : [
+        234,
+        117,
+        270,
+        20
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "env-light",
+  "height" : 251,
+  "lines" : [
+    "# .env.local (development only)",
+    "NODE_ENV=development",
+    "MAC_ADDRESS=00:1A:2B:3C:4D:5E",
+    "LOG_LEVEL=debug",
+    "PORT=8080"
+  ],
+  "pointSize" : 13,
+  "scale" : 2,
+  "width" : 579
+}

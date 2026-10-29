@@ -1,0 +1,36 @@
+{
+  "detector" : "messaging.discord.token",
+  "expected" : [
+    {
+      "detectors" : [
+        "config.yaml.secret",
+        "messaging.discord.token"
+      ],
+      "line" : 2,
+      "range" : [
+        20,
+        59
+      ],
+      "rect" : [
+        338,
+        109,
+        872,
+        24
+      ],
+      "wholeLine" : false
+    }
+  ],
+  "fontName" : ".AppleSystemUIFontMonospaced-Regular",
+  "frame" : "json-dark",
+  "height" : 237,
+  "lines" : [
+    "{",
+    "  \"service\": \"billing-api\",",
+    "  \"discord_token\": \"MRmlU2N09lwQIUq02VSFjDPK.XnJyna.YoN43_SopnAUKlCUIX55bcm7iQn\",",
+    "  \"region\": \"eu-west-1\"",
+    "}"
+  ],
+  "pointSize" : 12,
+  "scale" : 2,
+  "width" : 1282
+}
