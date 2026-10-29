@@ -5,20 +5,36 @@ name: Release
 # only on the release Mac. A CI build is ad-hoc, so CI never publishes one (a user who installed it could never update).
 # The release Mac builds, signs, gates and makes the DMG and the signed feed (README "Releasing"); CI checks that the
 # tagged source builds and that the app it builds passes the install-mode signature gate.
+# Every step fails the job when its command fails (bash -eo pipefail, nothing piped through tail: 2026-10-28 the build
+# failed and only the gate's later failure showed it). Built with the Xcode 27 preview image (the release Mac's
+# toolchain); CI covers the newest stable Xcode too.
 on:
   push:
     tags: ['v*']
+  workflow_dispatch:
+defaults:
+  run:
+    shell: bash
 jobs:
   build-check:
-    runs-on: macos-15
+    runs-on: xcode-27
     permissions: { contents: read }
     steps:
       - uses: actions/checkout@v4
       - uses: maxim-lobanov/setup-xcode@v1
-        with: { xcode-version: latest-stable }
+        with: { xcode-version: latest }
+      - run: xcodebuild -version
       - run: brew install xcodegen
       - run: xcodegen generate
       - name: Build app (Release, ad-hoc)
-        run: xcodebuild -project Obscura.xcodeproj -scheme Obscura -configuration Release -destination 'generic/platform=macOS' -derivedDataPath build -onlyUsePackageVersionsFromResolvedFile build | tail -5
+        run: |
+          if ! xcodebuild -project Obscura.xcodeproj -scheme Obscura -configuration Release -destination 'generic/platform=macOS' \
+               -derivedDataPath build -onlyUsePackageVersionsFromResolvedFile build > build.log 2>&1; then
+            grep -nE 'error:|\*\* BUILD' build.log > errors.txt || true   # display only; the build's status decides
+            head -80 errors.txt
+            tail -60 build.log
+            exit 1
+          fi
+          grep -E '\*\* BUILD' build.log
       - name: Signature gate (install mode; the release gate runs on the release Mac)
         run: Scripts/check-app-signature.sh build/Build/Products/Release/Obscura.app

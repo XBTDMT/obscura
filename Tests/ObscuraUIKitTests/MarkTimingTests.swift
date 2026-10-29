@@ -69,7 +69,9 @@ import Testing
             let tiff = try #require(image.tiffRepresentation)
             let bitmap = try #require(NSBitmapImageRep(data: tiff))
             // Inside the caught dot (lower right, 4.8/16 of the mark from its centre), just outside the ring.
-            let p = Int((9 + 18 * 4.8 / 16 + 1.2) * 2)
+            // Typed in two steps: as one literal expression, Xcode 26's type checker gives up on it.
+            let points: Double = 9 + 18 * 4.8 / 16 + 1.2
+            let p = Int(points * 2)
             return try #require(bitmap.colorAt(x: p, y: p)).alphaComponent
         }
         let full = try alphaAtDot(1), half = try alphaAtDot(0.5), none = try alphaAtDot(0)
