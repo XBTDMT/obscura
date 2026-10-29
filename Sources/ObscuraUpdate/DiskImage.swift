@@ -1,5 +1,5 @@
 // Opens the downloaded disk image read-only, without Finder or auto-open, at a mount point inside Obscura's private
-// update folder (G-33). The image's own checksums are verified by hdiutil on attach.
+// mount folder (G-33, G-43). The image's own checksums are verified by hdiutil on attach.
 public import Foundation
 
 public protocol DiskImageMounting: Sendable {

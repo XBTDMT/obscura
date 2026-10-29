@@ -28,6 +28,7 @@ import Testing
             mounter = FakeMounter(content: volume)
             image = imageBytes
             let work = root.appending(path: "work", directoryHint: .isDirectory)
+            let mount = root.appending(path: "mount", directoryHint: .isDirectory)
             installer = UpdateInstaller(
                 installed: InstalledApp(bundleURL: installedApp, bundleIdentifier: T.bundleID, version: T.version("1.0.0", "5")),
                 feedURL: URL(string: "https://updates.example.com/feed.json")!, trust: UpdateTrust(keys: []),
@@ -35,11 +36,16 @@ import Testing
                 workFolder: { _ in
                     try FileManager.default.createDirectory(at: work, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700])
                     return work
+                },
+                mountFolder: { [mount] in
+                    try FileManager.default.createDirectory(at: mount, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700])
+                    return mount
                 })
         }
 
         var manifest: UpdateManifest { T.manifest(size: Int64(image.count), sha256: T.sha256(image)) }
         var workFolder: URL { root.appending(path: "work") }
+        var mountFolder: URL { root.appending(path: "mount") }
 
         func installedIsUntouched() -> Bool {
             T.marker(of: installedApp) == "old" && !FileManager.default.fileExists(atPath: workFolder.path)
@@ -57,6 +63,7 @@ import Testing
         #expect(T.marker(of: prepared.rollback) == "old", "the previous app is kept until the new one runs")
         #expect(prepared.rollback.path.hasPrefix(w.workFolder.path))
         #expect(w.mounter.detached.withLock { $0.count } == 1, "the disk image is detached")
+        #expect(!FileManager.default.fileExists(atPath: w.mountFolder.path), "and its mount folder removed (G-43)")
         #expect(FileManager.default.fileExists(atPath: w.state.appending(path: "pending-install.json").path))
     }
 

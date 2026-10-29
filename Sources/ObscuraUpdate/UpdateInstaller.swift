@@ -2,7 +2,8 @@
 //   1. Obscura can replace itself where it is (writable, not translocated, not on the disk image).
 //   2. Download the disk image into a private folder on the app's own volume; size and SHA-256 must equal the signed
 //      manifest's (the download is capped at the manifest's size while it streams).
-//   3. Attach it read-only (no Finder, no auto-open), copy the one app out, detach.
+//   3. Attach it read-only (no Finder, no auto-open) under a private folder in the temporary directory (G-43: never in
+//      the work folder, whose mounts macOS 27 will not let Obscura read), copy the one app out, detach.
 //   4. Verify the COPY (what will be installed, not what was mounted): valid signature meeting the running app's own
 //      designated requirement, hardened runtime, no exceptions; same bundle id; exactly the manifest's version, newer.
 //   5. Swap it with the installed app in one atomic rename (`renamex_np` RENAME_SWAP; FileManager.replaceItemAt where
@@ -66,11 +67,14 @@ public final class UpdateInstaller: Sendable {
     let stateFolder: URL
     /// The private work folder on the app's volume; injectable for tests.
     let workFolder: @Sendable (URL) throws -> URL
+    /// The private folder the disk image is mounted under (G-43); injectable for tests.
+    let mountFolder: @Sendable () throws -> URL
 
     public init(installed: InstalledApp, feedURL: URL, trust: UpdateTrust, transport: any UpdateTransport,
                 mounter: any DiskImageMounting = HdiutilMounter(), codeVerifier: any AppSignatureVerifying, stateFolder: URL,
                 systemVersion: OperatingSystemVersion = ProcessInfo.processInfo.operatingSystemVersion,
-                workFolder: @escaping @Sendable (URL) throws -> URL = UpdateInstaller.privateFolder(onVolumeOf:)) {
+                workFolder: @escaping @Sendable (URL) throws -> URL = UpdateInstaller.privateFolder(onVolumeOf:),
+                mountFolder: @escaping @Sendable () throws -> URL = UpdateInstaller.privateMountFolder) {
         self.installed = installed
         self.feedURL = feedURL
         self.verifier = FeedVerifier(trust: trust, bundleIdentifier: installed.bundleIdentifier, current: installed.version,
@@ -80,6 +84,7 @@ public final class UpdateInstaller: Sendable {
         self.codeVerifier = codeVerifier
         self.stateFolder = stateFolder
         self.workFolder = workFolder
+        self.mountFolder = mountFolder
     }
 
     // MARK: Check
@@ -113,12 +118,11 @@ public final class UpdateInstaller: Sendable {
         guard got.sha256 == manifest.sha256 else { throw .downloadHashMismatch }
 
         progress(.verifying)
-        let mountRoot = work.appending(path: "mount", directoryHint: .isDirectory)
         let staged = work.appending(path: "new", directoryHint: .isDirectory).appending(path: installed.bundleURL.lastPathComponent)
-        do {
-            try FileAtomics.makePrivateDirectory(mountRoot)
-            try FileAtomics.makePrivateDirectory(staged.deletingLastPathComponent())
-        } catch { throw .fileSystem("work folders") }
+        do { try FileAtomics.makePrivateDirectory(staged.deletingLastPathComponent()) } catch { throw .fileSystem("work folders") }
+        let mountRoot: URL
+        do { mountRoot = try mountFolder() } catch { throw .fileSystem("mount folder") }
+        defer { try? FileManager.default.removeItem(at: mountRoot) }
         let mountPoint = try await mounter.attach(image, under: mountRoot)
         let copied: Result<Void, UpdateError>
         do {
@@ -191,6 +195,16 @@ public final class UpdateInstaller: Sendable {
     /// A private (0700) folder Foundation picks on the same volume as `app`, so the final rename is atomic.
     @Sendable public static func privateFolder(onVolumeOf app: URL) throws -> URL {
         let folder = try FileManager.default.url(for: .itemReplacementDirectory, in: .userDomainMask, appropriateFor: app, create: true)
+        try FileAtomics.makePrivateDirectory(folder)
+        return folder
+    }
+
+    /// Where the downloaded disk image is mounted (G-43): a fresh private (0700) folder in the per-user temporary
+    /// directory, removed once the image is detached. Not in the work folder: macOS 27 refuses to read a disk image
+    /// mounted inside the item-replacement folder (TemporaryItems), and every install then stopped as "app missing".
+    @Sendable public static func privateMountFolder() throws -> URL {
+        let folder = FileManager.default.temporaryDirectory
+            .appending(path: "io.github.xbtdmt.obscura-update-mount-\(UUID().uuidString)", directoryHint: .isDirectory)
         try FileAtomics.makePrivateDirectory(folder)
         return folder
     }

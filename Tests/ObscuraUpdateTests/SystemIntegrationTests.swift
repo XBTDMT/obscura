@@ -95,6 +95,27 @@ import Testing
         #expect(!FileManager.default.fileExists(atPath: app.path), "detached")
     }
 
+    @Test func theInstallersOwnMountFolderCanBeRead() async throws {
+        // G-43: macOS 27 refuses to read a disk image mounted inside the item-replacement folder (TemporaryItems), so the
+        // installer reported "app missing" on a real Mac. This mounts where the installer mounts, not in a test folder.
+        let folder = try T.tempFolder()
+        defer { try? FileManager.default.removeItem(at: folder) }
+        let source = folder.appending(path: "src", directoryHint: .isDirectory)
+        try T.makeApp(at: source.appending(path: "Obscura.app"), version: "1.1.0", build: "7", marker: "new")
+        let image = folder.appending(path: "test.dmg")
+        #expect(try T.run("/usr/bin/hdiutil", ["create", "-quiet", "-volname", "ObscuraTest", "-srcfolder", source.path,
+                                              "-format", "UDZO", image.path]) == 0)
+        let mountRoot = try UpdateInstaller.privateMountFolder()
+        defer { try? FileManager.default.removeItem(at: mountRoot) }
+        let mounter = HdiutilMounter()
+        let point = try await mounter.attach(image, under: mountRoot)
+        let found = Result { () throws(UpdateError) in try UpdateInstaller.singleApp(in: point) }
+        let marker = (try? found.get()).map(T.marker(of:))
+        await mounter.detach(point)
+        #expect(throws: Never.self) { try found.get() }
+        #expect(marker == "new")
+    }
+
     // MARK: Relaunch helper
 
     static func runHelper(app: URL, rollback: URL, opener: String) throws {
