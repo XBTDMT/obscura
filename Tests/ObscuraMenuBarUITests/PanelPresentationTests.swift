@@ -139,4 +139,40 @@ import Testing
         #expect(frame.minY >= Self.visible.minY)
         #expect(frame.maxY == 876 - PanelPresentation.gapBelowMenuBar)
     }
+
+    // MARK: A click on the item
+
+    /// A 33 pt menu bar (a notched 1512 × 982 screen); the item's button is 24 pt tall inside it.
+    static let bar = CGRect(x: 0, y: 949, width: 1512, height: 33)
+    static let item = CGRect(x: 980, y: 953, width: 24, height: 24)
+
+    @Test func aClickOnTheItemIsTheItemsToggleNotAClickOutside() {
+        // On macOS 27 the menu bar draws the item itself: the click reaches Obscura as a click in another process, so
+        // only its position says it was the item. Closing for it here and toggling after reopened the panel.
+        for point in [CGPoint(x: 992, y: 965), CGPoint(x: 980, y: 965), CGPoint(x: 1003.5, y: 965)] {
+            #expect(PanelPresentation.isOnItem(point, item: Self.item, menuBar: Self.bar), "\(point)")
+        }
+    }
+
+    @Test func theItemTakesTheMenuBarsFullHeight() {
+        // Like any menu bar item, a click above or below the button but still in the bar is the item.
+        for y: CGFloat in [949, 950, 980, 981.9] {
+            #expect(PanelPresentation.isOnItem(CGPoint(x: 992, y: y), item: Self.item, menuBar: Self.bar), "\(y)")
+        }
+    }
+
+    @Test func clicksBesideOrBelowTheItemAreOutside() {
+        let outside = [
+            CGPoint(x: 979.5, y: 965), CGPoint(x: 1004, y: 965),  // the next item along the bar
+            CGPoint(x: 992, y: 948), CGPoint(x: 992, y: 600),     // under the bar: a window, or the panel's own spot
+            CGPoint(x: 992, y: 982), CGPoint(x: 992, y: 1200),    // a display arranged above this one
+        ]
+        for point in outside {
+            #expect(!PanelPresentation.isOnItem(point, item: Self.item, menuBar: Self.bar), "\(point)")
+        }
+    }
+
+    @Test func withNoItemOnScreenNothingIsTheItem() {
+        #expect(!PanelPresentation.isOnItem(CGPoint(x: 992, y: 965), item: nil, menuBar: Self.bar))
+    }
 }

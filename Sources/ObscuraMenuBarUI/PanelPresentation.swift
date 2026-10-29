@@ -101,6 +101,16 @@ struct PanelPresentation: Equatable {
         }
     }
 
+    /// Whether a mouse-down at `point` (screen coordinates) is on the menu bar item, so the item's own action toggles the
+    /// panel and the click-outside rule leaves it alone. Decided by where the click is, not by which window took it: on
+    /// macOS 27 the menu bar draws status items itself, so a click on Obscura's item reaches the app as a click in
+    /// another process (the global monitor) and only its position says it was the item. The item spans the bar's full
+    /// height, like any menu bar item; `item` is nil when the item is not on screen.
+    static func isOnItem(_ point: CGPoint, item: CGRect?, menuBar: CGRect) -> Bool {
+        guard let item else { return false }
+        return point.x >= item.minX && point.x < item.maxX && point.y >= menuBar.minY && point.y < menuBar.maxY
+    }
+
     // MARK: Placement and look
 
     /// The gap between the bottom of the menu bar and the panel's top edge (design/mockups/unified/menubar.html `.mwrap`).

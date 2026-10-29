@@ -220,16 +220,22 @@ public final class MenuBarController: NSObject {
 
     private func installMonitors() {
         removeMonitors()
-        // A click in another app (or on the desktop, or another menu bar item) closes the panel.
-        if let global = NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown, .otherMouseDown], handler: { [weak self] _ in
-            MainActor.assumeIsolated { self?.close(.clickedOutside) }
-        }) { monitors.append(global) }
-        // A click in one of Obscura's own windows closes it too; clicks in the panel and on the item do not (the item's
-        // own action toggles).
-        if let local = NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown, .otherMouseDown], handler: { [weak self] event in
-            let window = event.window
+        // A click in another app (or on the desktop, or another menu bar item) closes the panel. A click on Obscura's own
+        // item arrives here too on macOS 27 (the menu bar draws it), so it is told apart by position: the item's own
+        // action toggles.
+        if let global = NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown, .otherMouseDown], handler: { [weak self] event in
+            let window = event.window, location = event.locationInWindow
             MainActor.assumeIsolated {
-                guard let self, window !== self.panel, window !== self.statusItem.button?.window else { return }
+                guard let self, !self.isOnItem(Self.screenPoint(location, in: window)) else { return }
+                self.close(.clickedOutside)
+            }
+        }) { monitors.append(global) }
+        // A click in one of Obscura's own windows closes it too; clicks in the panel and on the item do not.
+        if let local = NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown, .otherMouseDown], handler: { [weak self] event in
+            let window = event.window, location = event.locationInWindow
+            MainActor.assumeIsolated {
+                guard let self, window !== self.panel, window !== self.statusItem.button?.window,
+                      !self.isOnItem(Self.screenPoint(location, in: window)) else { return }
                 self.close(.clickedOutside)
             }
             return event
@@ -259,6 +265,22 @@ public final class MenuBarController: NSObject {
         monitors.removeAll()
         if let resignKeyObserver { NotificationCenter.default.removeObserver(resignKeyObserver) }
         resignKeyObserver = nil
+    }
+
+    /// Whether a screen point is on the menu bar item (`PanelPresentation.isOnItem`), the bar taken from the item's screen:
+    /// from the bar's bottom (or the item's, when the bar hides itself and the visible frame reaches the top) to the top.
+    private func isOnItem(_ point: CGPoint) -> Bool {
+        guard let item = itemRect(),
+              let screen = NSScreen.screens.first(where: { $0.frame.intersects(item.insetBy(dx: -1, dy: -1)) }) else { return false }
+        let bottom = min(screen.visibleFrame.maxY, item.minY)
+        let bar = CGRect(x: screen.frame.minX, y: bottom, width: screen.frame.width, height: screen.frame.maxY - bottom)
+        return PanelPresentation.isOnItem(point, item: item, menuBar: bar)
+    }
+
+    /// A mouse event's location in screen coordinates (a global monitor's event has no window: it is already there).
+    private static func screenPoint(_ location: CGPoint, in window: NSWindow?) -> CGPoint {
+        guard let window else { return location }
+        return window.convertPoint(toScreen: location)
     }
 
     /// Whether a key press is the panel's Close (Esc, fixed in the catalogue: `.panelClose`). Caps Lock does not count.
