@@ -245,7 +245,7 @@ update check is a plain HTTPS request for a signed file and carries no identifie
 
 ## Build from source
 
-You need a current Xcode with Swift 6, and [XcodeGen](https://github.com/yonaskolb/XcodeGen) for the app project.
+You need Xcode 27 or later (Swift 6), and [XcodeGen](https://github.com/yonaskolb/XcodeGen) for the app project.
 
 ```sh
 git clone https://github.com/XBTDMT/obscura.git

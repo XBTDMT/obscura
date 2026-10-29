@@ -44,7 +44,8 @@ import ObscuraTestSupport
             // The grid draws sixteen chips in the bar's colour: count chip-coloured pixels on a coarse grid. The snapshot
             // is in the window's colour space, so the chip colour is read from a swatch drawn the same way.
             let swatch = try await Self.render(Rectangle().fill(MarkPreview.barColor(dark: dark)), size: CGSize(width: 20, height: 20), dark: dark)
-            let bar = try #require(swatch.colorAt(x: 20, y: 20))
+            // The swatch's centre pixel: the render is 2× on a Retina screen and 1× on a non-Retina one (CI machines).
+            let bar = try #require(swatch.colorAt(x: swatch.pixelsWide / 2, y: swatch.pixelsHigh / 2))
             var chips = 0
             for y in stride(from: 0, to: rep.pixelsHigh, by: 2) {
                 for x in stride(from: 0, to: rep.pixelsWide, by: 2) {

@@ -1,8 +1,8 @@
 name: CI
 # Every step fails the job when its command fails: bash runs with -eo pipefail, and no output is piped through tail or
 # filtered with `|| true` (2026-10-28: both jobs reported success while the tests did not compile and the app build
-# failed on Xcode 26.3). Two toolchains: the newest stable Xcode on GitHub's macOS 26 image (what most people build
-# with) and the Xcode 27 preview image (what the release Mac builds with).
+# failed on Xcode 26.3). Built and tested with Xcode 27, the release Mac's toolchain (G-42: Xcode 26 support is a
+# redman item; add `{ runner: macos-26, xcode: latest-stable }` back to both matrices when it lands).
 on:
   push: { branches: [main] }
   pull_request:
@@ -16,7 +16,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { runner: macos-26, xcode: latest-stable }
           - { runner: xcode-27, xcode: latest }
     runs-on: ${{ matrix.runner }}
     steps:
@@ -37,7 +36,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { runner: macos-26, xcode: latest-stable }
           - { runner: xcode-27, xcode: latest }
     runs-on: ${{ matrix.runner }}
     steps:
