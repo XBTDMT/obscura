@@ -198,6 +198,10 @@ If any check fails, your installed Obscura is left exactly as it was and the men
 update framework in the app. A copy you built yourself (ad-hoc signed) cannot verify updates; download new versions
 by hand.
 
+**On 0.1.0 or 0.1.1?** Their installer cannot open the downloaded disk image on macOS 27, so **Install** stops with
+nothing changed. Install 0.1.2 or later by hand once from the
+[Releases page](https://github.com/XBTDMT/obscura/releases); from then on updates install themselves.
+
 ## Security
 
 What Obscura does to keep your secrets, each point something you can check in the code:
